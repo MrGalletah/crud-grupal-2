@@ -9,7 +9,7 @@ const getUserById = (req, res) => {
   if (user) {
     res.status(200).json(user);
   } else {
-    res.status(404).json({ message: "Usuario no encontrado" });
+    res.status(500).json({ message: "Usuario no encontrado" });
   }
 };
 
@@ -32,7 +32,7 @@ const updateUser = (req, res) => {
 };
 
 const deleteUser = (req, res) => {
-  const deletedUser = userModel.deleteUser(req.params.id);
+  const deletedUser = userModel.deleteUser([req.params.id]);
   if (deletedUser) {
     res.status(200).json(deletedUser);
   } else {

@@ -15,10 +15,9 @@ function showDatos(datos) {
 }
 
 function showAlert() {
-    let resultsElement = document.getElementById("results");
     document.getElementById("alert-error").classList.add("show");
     window.setTimeout(() => document.getElementById("alert-error").classList.remove("show"), 3000)
-    resultsElement.innerHTML = "";
+    const resultsElement = document.getElementById("results").innerHTML = "";
 }
 
 function validate() {
